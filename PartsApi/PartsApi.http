@@ -1,0 +1,31 @@
+@PartsApi_HostAddress = http://localhost:5119
+
+GET {{PartsApi_HostAddress}}/api/parts
+Accept: application/json
+
+###
+
+POST {{PartsApi_HostAddress}}/api/parts
+Content-Type: application/json
+
+{
+  "partNumber": "P-001",
+  "description": "Example widget",
+  "uom": "Each",
+  "weight": 1.5,
+  "demarcation": "Zone-A",
+  "makeFlags": [
+    {
+      "name": "IsMake",
+      "value": true,
+      "validFrom": "2024-01-01T00:00:00Z",
+      "validTo": null
+    }
+  ],
+  "dynamicProperties": {
+    "color": "red",
+    "material": "aluminum"
+  }
+}
+
+###
